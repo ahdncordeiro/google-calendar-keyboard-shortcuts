@@ -5,7 +5,7 @@ function doc_keyUp(e) {
     if (e.keyCode == 219) {
       console.log("Keyboard for accept triggered.");
       document.querySelector("[aria-label='Respond Yes']").click();
-      Array.from(document.querySelectorAll('span')).find(el => el.textContent === 'OK').click();
+      // Array.from(document.querySelectorAll('span')).find(el => el.textContent === 'OK').click(); // Might not be required since enter works
     } else if (e.keyCode == 221) {
       console.log("Keyboard for deny triggered.");
       document.querySelector("[aria-label='Respond No']").click();
