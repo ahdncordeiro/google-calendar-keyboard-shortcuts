@@ -19,7 +19,7 @@ function doc_keyUp(e) {
 // register the handler 
 if ((shouldAddEventListener == null ? true : shouldAddEventListener)) {
   shouldAddEventListener = false;
-  console.log("Adding Google Calendar Accept/Deny keyboard shortcuts event listener...")
+  console.log("Adding Google Calendar [Open Next Event/Accept/Deny] keyboard shortcuts event listener...")
   document.addEventListener('keyup', doc_keyUp, false);
 }
 
