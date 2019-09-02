@@ -26,8 +26,8 @@ if ((shouldAddEventListener == null ? true : shouldAddEventListener)) {
 function openNextEvent() {
   pendingEvent = undefined;
   document.querySelectorAll('div[role=presentation]:nth-child(3) > div[role=button][style*="border-color: rgb(0, 0, 0)"]:not([style*="background-color: rgb(0, 0, 0)"])').forEach(function(divEl) {
-    pending = true;
-    if (divEl.hasChildNodes()) {
+    if (pendingEvent === undefined && divEl.hasChildNodes()) {
+      pending = true;
       divEl.querySelectorAll('span').forEach(function(spanEl) {
         if (getComputedStyle(spanEl).textDecorationLine === 'line-through') {
           pending = false;
@@ -35,7 +35,6 @@ function openNextEvent() {
       });
       if (pending) {
         pendingEvent = divEl;
-        return;
       }
     }
   });
